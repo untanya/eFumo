@@ -1,0 +1,22 @@
+{
+  "name": "efumo",
+  "version": "1.0.0",
+  "description": "e-commerce de fumo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/untanya/eFumo.git"
+  },
+  "author": "tanya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/untanya/eFumo/issues"
+  },
+  "homepage": "https://github.com/untanya/eFumo#readme",
+  "dependencies": {
+    "@leoua/fumo-api": "^3.0.3"
+  }
+}

@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/untanya/eFumo#readme",
   "dependencies": {
-    "@leoua/fumo-api": "^3.0.3"
+    "@leoua/fumo-api": "^3.0.3",
+    "axios": "^1.8.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
   }
 }

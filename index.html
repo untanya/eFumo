@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>e-Fumo</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="preload" href="./font/dfkth4.woff" as="font" type="font/woff" crossorigin="anonymous">
     <link rel="preload" href="./files/fumoLogo.png" as="image">
+    <script src="./js/index.js"></script>
 </head>
 <body>
     <div class="container">
@@ -21,15 +22,51 @@
             </nav>
         </header>
         <section class="navigation">
-            <input type="search" name="searchbar" id="search">
+            <input type="search" name="searchbar" id="search" placeholder="Recherche d'une fumo">
         </section>
-        <section class="about">
-            <p>
-                Nous sommes un site d'E-commerce fraichement arrivé, voulant démocratiser les fumo, ces petites peluche, notamment de l'univers du jeu vidéo "Touhou Project"
-            </p>
-        </section>
+        
+
         <section class="content">
-            
+            <section class="about">
+                <h1>
+                    Bienvenue sur E-Fumo
+                </h1>
+                <p>
+                    Nous sommes un site d'E-commerce fraichement arrive, voulant democratiser les fumo, ces petites peluche, notamment de l'univers du jeu video "Touhou Project".
+                </p>
+            </section>
+
+            <section class="fumoContainer">
+                <section class="fumo">
+                    <div class="fumoName">Nom de la Fumo</div>
+                    <div class="fumoImage"></div>
+                    <div class="fumoPrice">Prix :</div>
+                    <div class="fumoButton">
+                        <button type="submit">Acheter</button>
+                    </div>
+                </section>
+                
+                <section class="fumo">
+                    <div class="fumoName">Nom de la Fumo</div>
+                    <div class="fumoImage"></div>
+                    <div class="fumoPrice">Prix :</div>
+                    <div class="fumoButton">
+                        <button type="submit">Acheter</button>
+                    </div>
+                </section>
+                
+                <section class="fumo">
+                    <div class="fumoName">Nom de la Fumo</div>
+                    <div class="fumoImage"></div>
+                    <div class="fumoPrice">Prix :</div>
+                    <div class="fumoButton">
+                        <button type="submit">Acheter</button>
+                    </div>
+                </section>
+            </section>
+            <section class="panier">
+                <p>Panier</p>
+            </section>
         </section>
     </div>
 </body>

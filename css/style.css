@@ -12,9 +12,15 @@
 
 .container {
     display: grid;
-    gap:1em;
-    margin: 1em auto 1em auto;
-    grid-template-areas: "header" "navigation" "content" "footer";
+    gap: 1em;
+    margin: 1em auto;
+    grid-template-columns: 3fr 1fr; /* Ajoute une colonne pour la sidebar */
+    grid-template-areas: 
+        "header header"
+        "navigation navigation"
+        "content content"
+        "sidebar sidebar"
+        "footer footer";
 }
 
 @font-face {
@@ -144,21 +150,122 @@ nav {
 .panier {
     display: none;
     position: fixed;
+    background-color: white;
+    border: 2px solid black;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    cursor: pointer;
     bottom: 0.5em;
-    background-color: #FFF;
 }
 
 .panier p {
     font-size: 2rem;
 }
 
-@media(max-width: 500px) {
+.panierBox {
+    display: none;
+    grid-area: sidebar;
+    background-color: white;
+    border-left: 2px solid black;
+    padding: 10px;
+    text-align: center;
+    max-height: 80vh; /* Évite que ça prenne tout l'écran */
+    overflow-y: auto; /* Ajoute un scroll si trop de Fumos */
+    width: 100%; /* S'adapte à la largeur de la sidebar */
+}
+
+.panierFumo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 5px;
+}
+
+.panierItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 5px;
+}
+
+.panierFumo img {
+    width: 50px;
+    height: auto;
+}
+
+/* 📌 Conteneur des boutons dans le panier */
+.panierActions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* 📌 Style du bouton "Fermer le panier" */
+.closePanier {
+    padding: 5px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    background-color: red;
+    color: white;
+}
+
+.closePanier:hover {
+    background-color: darkred;
+}
+
+/* 📌 Style du bouton "Vider le panier" */
+.clearPanier {
+    padding: 5px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    background-color: black;
+    color: white;
+}
+
+.clearPanier:hover {
+    background-color: grey;
+}
+
+footer {
+    display: grid;
+    grid-area: footer;
+}
+
+.network {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.network a img {
+    width: 2em;
+}
+
+@media (max-width: 500px) {
     .container {
-        grid-template-columns: 1fr 3fr;
+        grid-template-columns: 1fr;
         grid-template-areas: 
-        "header header"
-        "navigation navigation"
-        "content content"
-        "footer footer";
+            "header"
+            "navigation"
+            "content"
+            "footer";
+    }
+
+    .panierBox {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        max-height: 50vh; /* Ajuste la hauteur */
+        overflow-y: auto;
+        border-top: 2px solid black;
     }
 }

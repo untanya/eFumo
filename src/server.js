@@ -21,13 +21,24 @@ app.get("/fumos/random", (req, res) => {
 
 // Route 2️⃣ : Obtenir une Fumo spécifique avec son nom
 app.get("/fumos/:name", (req, res) => {
-    const fumoName = req.params.name.toLowerCase();
-    const foundFumo = fumos.find(fumo => fumo.name.toLowerCase() === fumoName);
+    if (!req.params.name) {
+        return res.status(400).json({ error: "Nom de Fumo requis." });
+    }
 
-    if (foundFumo) {
-        res.json(foundFumo);
+    const searchTerms = req.params.name.toLowerCase().split(" "); // Divise en plusieurs mots
+
+    // 📌 Cherche tous les Fumos qui contiennent AU MOINS un mot de `searchTerms`
+    const foundFumos = fumoData.characters.filter(fumo => 
+        typeof fumo.ch_name === "string" && searchTerms.some(term => fumo.ch_name.toLowerCase().includes(term))
+    );
+
+    console.log(searchTerms, foundFumos);
+    
+
+    if (foundFumos.length > 0) {
+        res.json(foundFumos); // 📌 Envoie TOUS les résultats trouvés
     } else {
-        res.status(404).json({ error: "Fumo non trouvé" });
+        res.status(404).json({ error: `Aucune Fumo trouvée pour "${req.params.name}".` });
     }
 });
 
